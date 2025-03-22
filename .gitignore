@@ -1,3 +1,21 @@
+# 🔥 Node / pnpm / build junk
+node_modules/
+dist/
+.cache/
+.pnpm-store/
+.env
+.env.local
+
+# 💾 Local database
+agent/data/*.sqlite
+
+# 📦 VSCode / editor configs
+.vscode/
+.DS_Store
+
+# 🧪 Test output
+coverage/
+*.log
 node_modules
 /out
 
