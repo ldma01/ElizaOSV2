@@ -5,6 +5,7 @@ export const defaultCharacter: Character = {
     username: "eliza",
     plugins: [],
     modelProvider: ModelProviderName.LLAMALOCAL,
+    model: "llama3:8b",
     settings: {
         secrets: {},
         voice: {
