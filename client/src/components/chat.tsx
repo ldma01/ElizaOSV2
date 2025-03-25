@@ -18,11 +18,12 @@ import CopyButton from "./copy-button";
 import ChatTtsButton from "./ui/chat/chat-tts-button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { useToast } from "@/hooks/use-toast";
-import AIWriter from "react-aiwriter";
+// Removed broken AIWriter import and usage
 import type { IAttachment } from "@/types";
 import { AudioRecorder } from "./audio-recorder";
 import { Badge } from "./ui/badge";
 import { useAutoScroll } from "./ui/chat/hooks/useAutoScroll";
+
 
 type ExtraContentFields = {
     user: string;
@@ -204,13 +205,8 @@ export default function Page({ agentId }: { agentId: UUID }) {
                                         <ChatBubbleMessage
                                             isLoading={message?.isLoading}
                                         >
-                                            {message?.user !== "user" ? (
-                                                <AIWriter>
-                                                    {message?.text}
-                                                </AIWriter>
-                                            ) : (
-                                                message?.text
-                                            )}
+                                            {message?.text}
+
                                             {/* Attachments */}
                                             <div>
                                                 {message?.attachments?.map(
