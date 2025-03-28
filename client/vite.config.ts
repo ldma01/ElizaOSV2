@@ -29,6 +29,16 @@ export default defineConfig(({ mode }) => {
                 env.SERVER_BASE_URL
             )
         },
+        server: {
+            port: 5175, // You can change this if needed
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:3001',
+                    changeOrigin: true,
+                    rewrite: (path) => path.replace(/^\/api/, '')
+                }
+            }
+        },
         build: {
             outDir: "dist",
             minify: true,
